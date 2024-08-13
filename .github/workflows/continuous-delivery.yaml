@@ -1,0 +1,36 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  NODE_OPTIONS: --max_old_space_size=6144
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+        with:
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.0.3
+        with:
+          cache: yarn
+          node-version-file: ".nvmrc"
+      - name: Install dependencies
+        run: yarn install --immutable
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Build
+        run: ./node_modules/.bin/gulp build-demo
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy ./demo/dist --project-name=app-hombee-demo
