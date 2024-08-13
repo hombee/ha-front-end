@@ -4,11 +4,7 @@ import { energyEntities } from "../stubs/entities";
 import { DemoConfig } from "./types";
 
 export const demoConfigs: Array<() => Promise<DemoConfig>> = [
-  () => import("./sections").then((mod) => mod.demoSections),
-  () => import("./arsaboo").then((mod) => mod.demoArsaboo),
-  () => import("./teachingbirds").then((mod) => mod.demoTeachingbirds),
-  () => import("./kernehed").then((mod) => mod.demoKernehed),
-  () => import("./jimpower").then((mod) => mod.demoJimpower),
+  () => import("./hombee").then((mod) => mod.demoSections),
 ];
 
 // eslint-disable-next-line import/no-mutable-exports
