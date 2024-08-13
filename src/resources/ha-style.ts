@@ -1,9 +1,13 @@
 import { css, unsafeCSS } from "lit";
 import { fontStyles } from "./roboto";
 import {
+  BEIGE,
+  BLACK,
+  BROWN,
   DEFAULT_ACCENT_COLOR,
   DEFAULT_PRIMARY_COLOR,
   derivedStyles,
+  ORANGE,
 } from "./styles-data";
 
 const mainStyles = css`
@@ -441,6 +445,53 @@ const mainStyles = css`
         .map(([key, value]) => `--${key}: ${value};`)
         .join("")
     )}
+
+    /* Hombee */
+    /* Header */
+    --app-header-background-color: ${unsafeCSS(BROWN)};
+    --app-header-text-color: ${unsafeCSS(BEIGE)};
+
+    /* Main colors. */
+    --primary-color: ${unsafeCSS(BLACK)};
+    --light-primary-color: ${unsafeCSS(BROWN)};
+
+    /* Backgrounds. */
+    --primary-background-color: ${unsafeCSS(BEIGE)};
+    --secondary-background-color: ${unsafeCSS(BEIGE)};
+    --card-background-color: ${unsafeCSS(BEIGE)};
+    --clear-background-color: ${unsafeCSS(BEIGE)};
+
+    /* Text. */
+    --primary-text-color: ${unsafeCSS(BLACK)};
+    --secondary-text-color: ${unsafeCSS(BLACK)};
+    --text-primary-color: ${unsafeCSS(BLACK)};
+    --text-light-primary-color: ${unsafeCSS(BEIGE)};
+    --divider-color: ${unsafeCSS(BLACK)};
+    --disabled-text-color: ${unsafeCSS(BLACK)};
+    --text-accent-color: ${unsafeCSS(BLACK)};
+
+    /* Sidebar */
+    --sidebar-background-color: ${unsafeCSS(BEIGE)};
+
+    --sidebar-icon-color: ${unsafeCSS(BROWN)};
+    --sidebar-text-color: ${unsafeCSS(BROWN)};
+    --sidebar-selected-icon-color: ${unsafeCSS(BLACK)};
+    --sidebar-selected-text-color: ${unsafeCSS(BLACK)};
+
+    /* States. */
+    --state-icon-color: ${unsafeCSS(BLACK)};
+    --state-active-color: ${unsafeCSS(BLACK)};
+    --state-inactive-color: ${unsafeCSS(BLACK)};
+    --state-unavailable-color: ${unsafeCSS(ORANGE)};
+
+    /* Switches */
+    --switch-checked-button-color: ${unsafeCSS(BLACK)};
+    --switch-checked-track-color: ${unsafeCSS(BLACK)};
+    --switch-unchecked-button-color: ${unsafeCSS(BLACK)};
+    --switch-unchecked-track-color: ${unsafeCSS(BLACK)};
+
+    /* Styles. */
+    ha-card-border-width: 0;
   }
 `.toString();
 
