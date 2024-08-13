@@ -491,7 +491,7 @@ const mainStyles = css`
     --switch-unchecked-track-color: ${unsafeCSS(BLACK)};
 
     /* Styles. */
-    ha-card-border-width: 0;
+    --ha-card-border-width: 0;
   }
 `.toString();
 
