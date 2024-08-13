@@ -1,5 +1,4 @@
 import { DemoConfig } from "../types";
-import { demoLovelaceDescription } from "./description";
 import { demoEntitiesSections } from "./entities";
 import { demoLovelaceSections } from "./lovelace";
 
@@ -9,5 +8,5 @@ export const demoSections: DemoConfig = {
   name: "Hombee Home",
   lovelace: demoLovelaceSections,
   entities: demoEntitiesSections,
-  theme: () => ({}),
+  theme: () => null,
 };
